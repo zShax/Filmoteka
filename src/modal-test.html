@@ -7,6 +7,8 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Modal Test</title>
+    <!-- Flickity -->
+    <link rel="stylesheet" href="./flickity.css" media="screen" />
   </head>
   <body>
     <!-- Open Button -->
@@ -29,10 +31,11 @@
               STUDENTS
             </h2>
 
-            <div class="main__modal__container__people">
-              <div class="main__modal__container__people--1">
-                <figure>
-                  <img src="./img/anon.jpg" alt="Daniel" />
+            <!-- People Cards -->
+            <div class="gallery js-flickity">
+              <div class="gallery-cell">
+                <figure class="main__modal__container__member--1">
+                  <img src="./img/daniel.jpg" alt="Daniel" />
                   <figcaption>
                     Daniel Purghel<br /><span>Developer</span>
 
@@ -58,10 +61,9 @@
                   </figcaption>
                 </figure>
               </div>
-
-              <div class="main__modal__container__people--2">
-                <figure>
-                  <img src="./img/anon.jpg" alt="Daniel" />
+              <div class="gallery-cell">
+                <figure class="main__modal__container__member--2">
+                  <img src="./img/danielCP.jpg" alt="Daniel" />
                   <figcaption>
                     Predescu Daniel Constantin<br /><span>Developer</span>
 
@@ -87,12 +89,11 @@
                   </figcaption>
                 </figure>
               </div>
-
-              <div class="main__modal__container__people--3">
-                <figure>
-                  <img src="./img/anon.jpg" alt="Razvan" />
+              <div class="gallery-cell">
+                <figure class="main__modal__container__member--3">
+                  <img src="./img/razvan.jpg" alt="Razvan" />
                   <figcaption>
-                    Răzvan Pavel<br /><span>Team Leader</span>
+                    Pavel Petre Cristian<br /><span>Team Leader</span>
 
                     <br />
                     <a
@@ -116,12 +117,11 @@
                   </figcaption>
                 </figure>
               </div>
-
-              <div class="main__modal__container__people--4">
-                <figure>
-                  <img src="./img/anon.jpg" alt="Mihai" />
+              <div class="gallery-cell">
+                <figure class="main__modal__container__member--4">
+                  <img src="./img/mihai.jpg" alt="Mihai" />
                   <figcaption>
-                    Andrei-Bogdan<br />Mihai<br /><span>Scrum Master</span>
+                    Andrei-Bogdan Mihai<br /><span>Scrum Master</span>
 
                     <br />
                     <a
@@ -145,9 +145,8 @@
                   </figcaption>
                 </figure>
               </div>
-
-              <div class="main__modal__container__people--5">
-                <figure>
+              <div class="gallery-cell">
+                <figure class="main__modal__container__member--5">
                   <img src="./img/marius.jpeg" alt="Marius" />
                   <figcaption>
                     Marius Toma<br /><span>Developer</span>
@@ -181,5 +180,8 @@
     </div>
 
     <script src="./js/members-modal.js"></script>
+
+    <!-- Flickity -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
   </body>
 </html>

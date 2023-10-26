@@ -3,212 +3,185 @@ body {
   box-sizing: border-box; // REMOVE THIS TODO
 }
 
-.main {
-  &__modal {
-    // Button
-    &-button {
-      width: 20em;
-      height: 10em;
+.modal {
+  overflow: hidden;
+  position: relative;
 
-      margin: 50px;
-      background-color: black;
-      color: white;
-      font-family: impact;
-      font-size: 30px;
+  display: flex;
+  place-content: center;
+
+  height: 100vh;
+  width: 100vw;
+
+  margin-top: 5%;
+}
+
+.main {
+  &__modal__container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    width: 70%;
+    height: 70%;
+
+    box-shadow: 5px 7px 2px #00000009;
+
+    background: #f0f0f3;
+    background-image: url(../../img/background.png);
+
+    padding: 15px;
+
+    & > h2 {
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 25px;
+      place-self: center;
+
+      width: 85%;
+
+      margin-top: 20px;
+      margin-bottom: 0;
+
+      & img {
+        transform: translateY(20%);
+      }
+    }
+
+    &__close-button {
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      position: absolute;
+      top: 36px;
+      right: 30px;
+      font-size: 25px;
+      text-align: center;
+      line-height: 40px;
+
+      height: 40px;
+      width: 40px;
+
+      border: 1px solid #141414;
+      border-radius: 100%;
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.536);
-      }
-    }
+        cursor: pointer;
+        animation: rotating-circle 2s infinite;
+        @keyframes rotating-circle {
+          0% {
+            transform: rotate(0deg);
+          }
 
-    // Actual Modal Styles
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+          50% {
+            transform: rotate(180deg);
+          }
 
-    > div {
-      display: grid;
-      place-items: center;
-      height: 90%;
-    }
-
-    &__container {
-      position: relative;
-      display: grid;
-      justify-items: center;
-
-      box-shadow: 5px 7px 2px #00000009;
-
-      background: rgb(240, 240, 243);
-
-      & h2 {
-        transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        font-size: 40px;
-        margin-bottom: 0;
-
-        & img {
-          transform: translateY(8%);
+          100% {
+            transform: rotate(-180deg);
+          }
         }
+        background: rgb(255, 201, 158);
+        background: -moz-linear-gradient(
+          138deg,
+          rgba(255, 201, 158, 1) 0%,
+          rgba(255, 233, 215, 1) 15%,
+          rgba(255, 233, 215, 1) 85%,
+          rgba(255, 201, 158, 1) 100%
+        );
+        background: -webkit-linear-gradient(
+          138deg,
+          rgba(255, 201, 158, 1) 0%,
+          rgba(255, 233, 215, 1) 15%,
+          rgba(255, 255, 255, 0) 50%,
+          rgba(255, 233, 215, 1) 85%,
+          rgba(255, 201, 158, 1) 100%
+        );
+        background: linear-gradient(
+          138deg,
+          rgba(255, 201, 158, 1) 0%,
+          rgba(255, 233, 215, 1) 15%,
+          rgba(255, 255, 255, 0) 50%,
+          rgba(255, 233, 215, 1) 85%,
+          rgba(255, 201, 158, 1) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffc99e",endColorstr="#ffc99e",GradientType=1);
+        border-color: #ff6c00;
+        color: #ff6c00;
       }
+    }
 
-      &__close-button {
+    & {
+      figure {
         transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        position: absolute;
-        top: 36px;
-        right: 30px;
-        font-size: 25px;
+        position: relative;
+        overflow: hidden;
         text-align: center;
-        line-height: 40px;
+        width: 100%;
+        height: 530px;
 
-        height: 40px;
-        width: 40px;
+        margin: 0;
+        box-shadow: 2px 2px 2px #00000034;
 
-        border: 1px solid #141414;
-        border-radius: 100%;
+        border-radius: 10px;
 
-        &:hover {
-          cursor: pointer;
-          animation: rotating-circle 2s infinite;
-          @keyframes rotating-circle {
-            0% {
-              transform: rotate(0deg);
-            }
+        background-color: #fff;
 
-            50% {
-              transform: rotate(180deg);
-            }
+        img {
+          object-fit: cover;
+          object-position: top;
 
-            100% {
-              transform: rotate(-180deg);
-            }
+          width: 100%;
+          height: 410px;
+        }
+
+        figcaption {
+          font-weight: 900;
+
+          padding: 5%;
+
+          span {
+            font-weight: 500;
+            font-size: smaller;
+            color: gray;
           }
-          background: rgb(255, 201, 158);
-          background: -moz-linear-gradient(
-            138deg,
-            rgba(255, 201, 158, 1) 0%,
-            rgba(255, 233, 215, 1) 15%,
-            rgba(255, 233, 215, 1) 85%,
-            rgba(255, 201, 158, 1) 100%
-          );
-          background: -webkit-linear-gradient(
-            138deg,
-            rgba(255, 201, 158, 1) 0%,
-            rgba(255, 233, 215, 1) 15%,
-            rgba(255, 255, 255, 0) 50%,
-            rgba(255, 233, 215, 1) 85%,
-            rgba(255, 201, 158, 1) 100%
-          );
-          background: linear-gradient(
-            138deg,
-            rgba(255, 201, 158, 1) 0%,
-            rgba(255, 233, 215, 1) 15%,
-            rgba(255, 255, 255, 0) 50%,
-            rgba(255, 233, 215, 1) 85%,
-            rgba(255, 201, 158, 1) 100%
-          );
-          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffc99e",endColorstr="#ffc99e",GradientType=1);
-          border-color: #ff6c00;
-          color: #ff6c00;
+        }
+
+        &:hover,
+        &:focus {
+          transform: scale(1.025);
         }
       }
 
-      // Modal Images
-      &__people {
-        display: grid;
-        align-items: center;
-        grid-auto-flow: column;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        padding: 20px 0;
+      a {
+        height: 40px;
+        text-decoration: none;
+      }
 
-        figure {
-          transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          overflow: hidden;
-          text-align: center;
-          width: 100%;
+      svg {
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+          color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: visible;
 
-          margin: 0;
-          box-shadow: 2px 2px 2px #00000034;
+        padding: 12px;
+        margin-top: 5px;
 
-          border-radius: 10px;
+        color: #ccc;
 
-          background-color: #fff;
+        border-radius: 50px;
 
-          img {
-            object-fit: cover;
-
-            width: 200px;
-            height: 250px;
-          }
-
-          figcaption {
-            font-weight: 900;
-
-            padding: 5%;
-
-            span {
-              font-weight: 500;
-              font-size: smaller;
-              color: gray;
-            }
-          }
-
-          &:hover,
-          &:focus {
-            transform: scale(1.025);
-          }
+        &:hover,
+        &:focus {
+          background-color: #2e2e2e;
+          color: #ffffff;
         }
+      }
 
-        a {
-          height: 40px;
-          text-decoration: none;
-        }
+      p {
+        max-width: 180px;
 
-        svg {
-          transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-            color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          overflow: visible;
-
-          padding: 12px;
-          margin-top: 5px;
-
-          color: #ccc;
-
-          border-radius: 50px;
-
-          &:hover,
-          &:focus {
-            background-color: #2e2e2e;
-            color: #ffffff;
-          }
-        }
-
-        p {
-          max-width: 180px;
-
-          margin: 0;
-        }
-
-        // Card sizes
-        &-- {
-          $first-last: 0.85;
-          $second-third: 0.92;
-          &1 {
-            transform: scale($first-last) translate(9%, -3%);
-          }
-          &2 {
-            transform: scale($second-third);
-          }
-          &4 {
-            transform: scale($second-third);
-          }
-          &5 {
-            transform: scale($first-last) translate(-9%, -3%);
-          }
-        }
+        margin: 0;
       }
     }
   }
@@ -248,10 +221,6 @@ body {
     background: #00000019;
     text-align: center;
     vertical-align: middle;
-    .modal {
-      display: inline-block;
-      position: relative;
-    }
   }
 }
 
@@ -325,5 +294,22 @@ body {
   }
   100% {
     transform: scale(0);
+  }
+}
+
+// Responsiveness
+@media screen and (max-width: 768px) {
+  body {
+    background-color: black;
+  }
+
+  .main__modal__container__people {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    background-color: red;
   }
 }

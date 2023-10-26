@@ -149,45 +149,40 @@ body {
   box-sizing: border-box;
 }
 
-.main__modal {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+.modal {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  place-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 5%;
 }
-.main__modal-button {
-  width: 20em;
-  height: 10em;
-  margin: 50px;
-  background-color: black;
-  color: white;
-  font-family: impact;
-  font-size: 30px;
-}
-.main__modal-button:hover {
-  background-color: rgba(0, 0, 0, 0.536);
-}
-.main__modal > div {
-  display: grid;
-  place-items: center;
-  height: 90%;
-}
+
 .main__modal__container {
   position: relative;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-items: center;
+  justify-content: space-between;
+  text-align: center;
+  width: 70%;
+  height: 70%;
   box-shadow: 5px 7px 2px rgba(0, 0, 0, 0.0352941176);
-  background: rgb(240, 240, 243);
+  background: #f0f0f3;
+  background-image: url(../../img/background.png);
+  padding: 15px;
 }
-.main__modal__container h2 {
+.main__modal__container > h2 {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 40px;
+  font-size: 25px;
+  place-self: center;
+  width: 85%;
+  margin-top: 20px;
   margin-bottom: 0;
 }
-.main__modal__container h2 img {
-  transform: translateY(8%);
+.main__modal__container > h2 img {
+  transform: translateY(20%);
 }
 .main__modal__container__close-button {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -222,47 +217,43 @@ body {
     transform: rotate(-180deg);
   }
 }
-.main__modal__container__people {
-  display: grid;
-  align-items: center;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  padding: 20px 0;
-}
-.main__modal__container__people figure {
+.main__modal__container figure {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   text-align: center;
   width: 100%;
+  height: 530px;
   margin: 0;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2039215686);
   border-radius: 10px;
   background-color: #fff;
 }
-.main__modal__container__people figure img {
+.main__modal__container figure img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 200px;
-  height: 250px;
+  -o-object-position: top;
+     object-position: top;
+  width: 100%;
+  height: 410px;
 }
-.main__modal__container__people figure figcaption {
+.main__modal__container figure figcaption {
   font-weight: 900;
   padding: 5%;
 }
-.main__modal__container__people figure figcaption span {
+.main__modal__container figure figcaption span {
   font-weight: 500;
   font-size: smaller;
   color: gray;
 }
-.main__modal__container__people figure:hover, .main__modal__container__people figure:focus {
+.main__modal__container figure:hover, .main__modal__container figure:focus {
   transform: scale(1.025);
 }
-.main__modal__container__people a {
+.main__modal__container a {
   height: 40px;
   text-decoration: none;
 }
-.main__modal__container__people svg {
+.main__modal__container svg {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow: visible;
   padding: 12px;
@@ -270,25 +261,13 @@ body {
   color: #ccc;
   border-radius: 50px;
 }
-.main__modal__container__people svg:hover, .main__modal__container__people svg:focus {
+.main__modal__container svg:hover, .main__modal__container svg:focus {
   background-color: #2e2e2e;
   color: #ffffff;
 }
-.main__modal__container__people p {
+.main__modal__container p {
   max-width: 180px;
   margin: 0;
-}
-.main__modal__container__people--1 {
-  transform: scale(0.85) translate(9%, -3%);
-}
-.main__modal__container__people--2 {
-  transform: scale(0.92);
-}
-.main__modal__container__people--4 {
-  transform: scale(0.92);
-}
-.main__modal__container__people--5 {
-  transform: scale(0.85) translate(-9%, -3%);
 }
 
 #modal-container {
@@ -321,10 +300,6 @@ body {
   background: rgba(0, 0, 0, 0.0980392157);
   text-align: center;
   vertical-align: middle;
-}
-#modal-container .modal-background .modal {
-  display: inline-block;
-  position: relative;
 }
 
 .content {
@@ -392,5 +367,18 @@ body {
   }
   100% {
     transform: scale(0);
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    background-color: black;
+  }
+  .main__modal__container__people {
+    display: flex;
+  }
+}
+@media screen and (max-width: 425px) {
+  body {
+    background-color: red;
   }
 }
