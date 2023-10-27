@@ -11,7 +11,7 @@ body {
 
 .gallery {
   position: relative;
-  height: 88%;
+  height: 50%;
   background: #eee;
   overflow-x: clip;
 }
